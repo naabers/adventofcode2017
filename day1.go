@@ -5,12 +5,6 @@ import (
 	"strconv"
 )
 
-func check(e error) {
-	if e != nil {
-		panic(e)
-	}
-}
-
 func day1PartA() string {
 	input, err := ioutil.ReadFile("inputs/day1.txt")
 	check(err)
@@ -42,12 +36,4 @@ func day1PartB() string {
 		}
 	}
 	return strconv.Itoa(result)
-}
-
-func getIntFromByte(b byte) int {
-	result, e := strconv.Atoi(string(b))
-	if e != nil {
-		panic(e)
-	}
-	return result
 }
