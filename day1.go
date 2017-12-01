@@ -17,7 +17,7 @@ func day1PartA() string {
 
 	var prev byte
 	result := 0
-	for _, inputNumber := range input[:len(input)] {
+	for _, inputNumber := range input {
 		if prev == inputNumber {
 			currentNumber, _ := strconv.Atoi(string(inputNumber))
 			result += currentNumber
