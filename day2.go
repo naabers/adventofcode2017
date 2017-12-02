@@ -2,7 +2,6 @@ package adventofcode2017
 
 import (
 	"bufio"
-	"fmt"
 	"os"
 	"strconv"
 	"strings"
@@ -55,7 +54,6 @@ func getDivisibleAmount(line string) int {
 			if innerNumber == currentNumber {
 				continue
 			}
-			fmt.Printf("'%d' %d'\n", currentNumber, innerNumber)
 			mod := currentNumber % innerNumber
 			if mod == 0 {
 				return currentNumber / innerNumber
