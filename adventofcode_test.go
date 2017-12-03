@@ -30,7 +30,7 @@ func TestDay3PartA(t *testing.T) {
 	fmt.Printf("Day 3A: '%s'\n", result)
 }
 
-// func TestDay3PartB(t *testing.T) {
-// 	result := day3PartB()
-// 	fmt.Printf("Day 3B: '%s'\n", result)
-// }
+func TestDay3PartB(t *testing.T) {
+	result := day3PartB()
+	fmt.Printf("Day 3B: '%s'\n", result)
+}
