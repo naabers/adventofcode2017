@@ -34,3 +34,13 @@ func TestDay3PartB(t *testing.T) {
 	result := day3PartB()
 	fmt.Printf("Day 3B: '%s'\n", result)
 }
+
+func TestDay4PartA(t *testing.T) {
+	result := day4PartA()
+	fmt.Printf("Day 4A: '%s'\n", result)
+}
+
+func TestDay4PartB(t *testing.T) {
+	result := day4PartB()
+	fmt.Printf("Day 4B: '%s'\n", result)
+}
