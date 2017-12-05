@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-func day5PartA() string {
+func createMapOfInstructions() map[int]int {
 	file, err := os.Open("inputs/day5.txt")
 	check(err)
 	defer file.Close()
@@ -22,8 +22,12 @@ func day5PartA() string {
 		instructions[index] = instructionNumber
 		index++
 	}
+	return instructions
+}
 
-	index = 0
+func day5PartA() string {
+	instructions := createMapOfInstructions()
+	index := 0
 	total := 0
 	for index < len(instructions) {
 		currentInstruction := instructions[index]
@@ -36,23 +40,8 @@ func day5PartA() string {
 }
 
 func day5PartB() string {
-	file, err := os.Open("inputs/day5.txt")
-	check(err)
-	defer file.Close()
-
-	instructions := make(map[int]int)
-
-	scanner := bufio.NewScanner(file)
+	instructions := createMapOfInstructions()
 	index := 0
-	for scanner.Scan() {
-		currentLine := scanner.Text()
-		instructionNumber, err := strconv.Atoi(currentLine)
-		check(err)
-		instructions[index] = instructionNumber
-		index++
-	}
-
-	index = 0
 	total := 0
 	for index < len(instructions) {
 		currentInstruction := instructions[index]

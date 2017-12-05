@@ -14,7 +14,8 @@ func getLargeSmallDiff(line string) int {
 	var largest, smallest int
 
 	for index, numberString := range splitString {
-		currentNumber, _ := strconv.Atoi(numberString)
+		currentNumber, err := strconv.Atoi(numberString)
+		check(err)
 		if index == 0 {
 			largest = currentNumber
 			smallest = currentNumber
@@ -47,10 +48,11 @@ func getDivisibleAmount(line string) int {
 	splitString := strings.Split(line, "\t")
 
 	for _, currentString := range splitString {
-		currentNumber, _ := strconv.Atoi(currentString)
+		currentNumber, err := strconv.Atoi(currentString)
+		check(err)
 		for _, innerString := range splitString {
-			innerNumber, _ := strconv.Atoi(innerString)
-
+			innerNumber, err := strconv.Atoi(innerString)
+			check(err)
 			if innerNumber == currentNumber {
 				continue
 			}
