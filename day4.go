@@ -10,13 +10,13 @@ import (
 func isValidPassphraseA(phrase string) bool {
 	splitPassphrase := strings.Split(phrase, " ")
 
-	usedWords := make(map[string]int)
+	usedWords := make(map[string]interface{})
 
 	for _, currentWord := range splitPassphrase {
 		if _, existed := usedWords[currentWord]; existed {
 			return false
 		}
-		usedWords[currentWord] = 0
+		usedWords[currentWord] = nil
 	}
 	return true
 }
