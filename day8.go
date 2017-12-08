@@ -26,7 +26,8 @@ func updateRegister(registers map[string]int, instructionPieces []string) {
 	}
 }
 
-func processInstruction(registers map[string]int, instruction string) {
+//returns the value of the field that was to be updated (regardless of if it changed)
+func processInstruction(registers map[string]int, instruction string) int {
 	instructionPieces := strings.Split(instruction, " ")
 	if len(instructionPieces) != 7 {
 		panic("Instruction is invalid")
@@ -63,6 +64,7 @@ func processInstruction(registers map[string]int, instruction string) {
 	default:
 		panic("Unknown operator")
 	}
+	return registers[instructionPieces[0]]
 }
 
 func day8PartA() string {
@@ -98,11 +100,9 @@ func day8PartB() string {
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		currentLine := scanner.Text()
-		processInstruction(registers, currentLine)
-		for _, value := range registers {
-			if value > largest {
-				largest = value
-			}
+		value := processInstruction(registers, currentLine)
+		if value > largest {
+			largest = value
 		}
 	}
 
