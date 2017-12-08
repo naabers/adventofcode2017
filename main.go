@@ -5,71 +5,41 @@ import (
 	"time"
 )
 
+type fn func() string
+
 func main() {
 	fmt.Printf("Advent of Code 2017\n\n")
 	startTotal := time.Now()
-	result := day1PartA()
-	fmt.Printf("day1A: %v in %v\n", result, time.Since(startTotal))
 
-	startIndividual := time.Now()
-	result = day1PartB()
-	fmt.Printf("day1B: %v in %v\n", result, time.Since(startIndividual))
+	dayRunner("day1A", day1PartA)
+	dayRunner("day1B", day1PartB)
 
-	startIndividual = time.Now()
-	result = day2PartA()
-	fmt.Printf("day2A: %v in %v\n", result, time.Since(startIndividual))
+	dayRunner("day2A", day2PartA)
+	dayRunner("day2B", day2PartB)
 
-	startIndividual = time.Now()
-	result = day2PartB()
-	fmt.Printf("day2B: %v in %v\n", result, time.Since(startIndividual))
+	dayRunner("day3A", day3PartA)
+	dayRunner("day3B", day3PartB)
 
-	startIndividual = time.Now()
-	result = day3PartA()
-	fmt.Printf("day3A: %v in %v\n", result, time.Since(startIndividual))
+	dayRunner("day4A", day4PartA)
+	dayRunner("day4B", day4PartB)
 
-	startIndividual = time.Now()
-	result = day3PartB()
-	fmt.Printf("day3B: %v in %v\n", result, time.Since(startIndividual))
+	dayRunner("day5A", day5PartA)
+	dayRunner("day5B", day5PartB)
 
-	startIndividual = time.Now()
-	result = day4PartA()
-	fmt.Printf("day4A: %v in %v\n", result, time.Since(startIndividual))
+	dayRunner("day6A", day6PartA)
+	dayRunner("day6B", day6PartB)
 
-	startIndividual = time.Now()
-	result = day4PartB()
-	fmt.Printf("day4B: %v in %v\n", result, time.Since(startIndividual))
+	dayRunner("day7A", day7PartA)
+	dayRunner("day7B", day7PartB)
 
-	startIndividual = time.Now()
-	result = day5PartA()
-	fmt.Printf("day5A: %v in %v\n", result, time.Since(startIndividual))
-
-	startIndividual = time.Now()
-	result = day5PartB()
-	fmt.Printf("day5B: %v in %v\n", result, time.Since(startIndividual))
-
-	startIndividual = time.Now()
-	result = day6PartA()
-	fmt.Printf("day6A: %v in %v\n", result, time.Since(startIndividual))
-
-	startIndividual = time.Now()
-	result = day6PartB()
-	fmt.Printf("day6B: %v in %v\n", result, time.Since(startIndividual))
-
-	startIndividual = time.Now()
-	result = day7PartA()
-	fmt.Printf("day7A: %v in %v\n", result, time.Since(startIndividual))
-
-	startIndividual = time.Now()
-	result = day7PartB()
-	fmt.Printf("day7B: %v in %v\n", result, time.Since(startIndividual))
-
-	startIndividual = time.Now()
-	result = day8PartA()
-	fmt.Printf("day8A: %v in %v\n", result, time.Since(startIndividual))
-
-	startIndividual = time.Now()
-	result = day8PartB()
-	fmt.Printf("day8B: %v in %v\n", result, time.Since(startIndividual))
+	dayRunner("day8A", day8PartA)
+	dayRunner("day8B", day8PartB)
 
 	fmt.Printf("\nDone in %s\n", time.Since(startTotal))
+}
+
+func dayRunner(day string, f fn) {
+	startIndividual := time.Now()
+	result := f()
+	fmt.Printf("%s: '%v' in %v\n", day, result, time.Since(startIndividual))
 }
