@@ -63,5 +63,13 @@ func main() {
 	result = day7PartB()
 	fmt.Printf("day7B: %v in %v\n", result, time.Since(startIndividual))
 
+	startIndividual = time.Now()
+	result = day8PartA()
+	fmt.Printf("day8A: %v in %v\n", result, time.Since(startIndividual))
+
+	startIndividual = time.Now()
+	result = day8PartB()
+	fmt.Printf("day8B: %v in %v\n", result, time.Since(startIndividual))
+
 	fmt.Printf("\nDone in %s\n", time.Since(startTotal))
 }
