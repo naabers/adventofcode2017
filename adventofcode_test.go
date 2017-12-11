@@ -102,3 +102,15 @@ func TestDay8PartB(t *testing.T) {
 	fmt.Printf("Day 8B: '%s'\n", result)
 	assert.Equal(t, "8997", result, "Day 8 Part B is broken")
 }
+
+func TestDay9PartA(t *testing.T) {
+	result := day9PartA()
+	fmt.Printf("Day 9A: '%s'\n", result)
+	assert.Equal(t, "11846", result, "Day 9 Part A is broken")
+}
+
+func TestDay9PartB(t *testing.T) {
+	result := day9PartB()
+	fmt.Printf("Day 9B: '%s'\n", result)
+	assert.Equal(t, "6285", result, "Day 9 Part B is broken")
+}

@@ -35,6 +35,9 @@ func main() {
 	dayRunner("day8A", day8PartA)
 	dayRunner("day8B", day8PartB)
 
+	dayRunner("day9A", day9PartA)
+	dayRunner("day9B", day9PartB)
+
 	fmt.Printf("\nDone in %s\n", time.Since(startTotal))
 }
 
